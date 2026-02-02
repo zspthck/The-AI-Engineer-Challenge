@@ -159,7 +159,10 @@ export default function MatrixTerminal() {
             onKeyPress={handleKeyPress}
             disabled={isLoading}
             placeholder={isLoading ? 'Processing...' : 'Type your message...'}
-            className="flex-1 bg-transparent text-green-400 outline-none placeholder-green-700 disabled:opacity-50"
+            className="flex-1 bg-black border border-green-600/50 text-green-400 outline-none placeholder-green-700 disabled:opacity-50 px-3 py-2 rounded-none focus:border-green-500 focus:ring-1 focus:ring-green-500 focus:bg-black transition-colors"
+            style={{
+              caretColor: '#00ff00',
+            }}
             autoFocus
           />
           {isLoading && (
