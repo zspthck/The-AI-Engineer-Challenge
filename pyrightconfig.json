@@ -1,0 +1,22 @@
+{
+  "venvPath": ".",
+  "venv": ".venv",
+  "executionEnvironments": [
+    {
+      "root": "api",
+      "pythonVersion": "3.12",
+      "pythonPlatform": "Windows",
+      "extraPaths": [
+        ".venv/Lib/site-packages"
+      ],
+      "typeCheckingMode": "basic"
+    }
+  ],
+  "include": [
+    "api"
+  ],
+  "exclude": [
+    "**/__pycache__",
+    "**/.venv"
+  ]
+}
