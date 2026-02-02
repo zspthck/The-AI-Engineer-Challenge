@@ -64,12 +64,18 @@ npm start
 
 1. Push your code to GitHub
 2. Import your repository in Vercel
-3. **IMPORTANT - Set Root Directory:**
-   - During import, or in **Settings** → **General** → **Root Directory**
-   - Set it to: `frontend`
-   - This tells Vercel where your Next.js app is located
+3. **CRITICAL - Set Root Directory (Required!):**
+   - Go to your project in Vercel Dashboard
+   - Navigate to **Settings** → **General**
+   - Scroll down to **Root Directory**
+   - Click **Edit**
+   - Enter: `frontend` (without quotes or slashes)
+   - Click **Save**
+   - **You MUST redeploy after changing this setting!**
 4. Vercel will automatically detect Next.js and configure the build
-4. **IMPORTANT:** Add the `OPENAI_API_KEY` environment variable in Vercel:
+   
+**Note:** There is a `vercel.json` in the root that specifies `rootDirectory: "frontend"`, but you should also set it manually in the Vercel dashboard to ensure it works correctly.
+5. **IMPORTANT:** Add the `OPENAI_API_KEY` environment variable in Vercel:
    - Go to your project settings in Vercel
    - Navigate to **Settings** → **Environment Variables**
    - Add a new variable:
@@ -77,7 +83,7 @@ npm start
      - **Value:** Your OpenAI API key (starts with `sk-`)
      - **Environment:** Production, Preview, and Development (select all)
    - Click **Save**
-5. Deploy!
+6. Deploy!
 
 **Note:** The backend is now integrated as Vercel serverless functions in `/app/api/chat/route.ts`, so you don't need a separate backend deployment. The `OPENAI_API_KEY` environment variable is required for the chat functionality to work.
 
