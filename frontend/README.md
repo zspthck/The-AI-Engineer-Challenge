@@ -63,8 +63,12 @@ npm start
 ## 🚢 Deploy to Vercel
 
 1. Push your code to GitHub
-2. Import your repository in Vercel (make sure to set the **Root Directory** to `frontend`)
-3. Vercel will automatically detect Next.js and configure the build
+2. Import your repository in Vercel
+3. **IMPORTANT - Set Root Directory:**
+   - During import, or in **Settings** → **General** → **Root Directory**
+   - Set it to: `frontend`
+   - This tells Vercel where your Next.js app is located
+4. Vercel will automatically detect Next.js and configure the build
 4. **IMPORTANT:** Add the `OPENAI_API_KEY` environment variable in Vercel:
    - Go to your project settings in Vercel
    - Navigate to **Settings** → **Environment Variables**
