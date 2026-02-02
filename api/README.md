@@ -38,8 +38,14 @@ This runs the app with `uvicorn` on `http://localhost:8000` with auto-reload ena
 
 **Note:** Make sure the `OPENAI_API_KEY` environment variable is set in your shell before launching the server. You can set it with:
 
+**Bash/Unix:**
 ```bash
 export OPENAI_API_KEY=sk-your-key-here
+```
+
+**PowerShell:**
+```powershell
+$env:OPENAI_API_KEY = "sk-your-key-here"
 ```
 
 If you encounter an "Address already in use" error, you may need to kill existing processes on port 8000:
