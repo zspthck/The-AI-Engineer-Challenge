@@ -6,16 +6,20 @@ const nextConfig = {
     maxInactiveAge: 25 * 1000,
     pagesBufferLength: 2,
   },
-  // Allow connecting to backend on different port during development
+  // Note: In production, API routes are handled by Next.js serverless functions
+  // This rewrite is only used if NEXT_PUBLIC_API_URL is set (for external backend)
   async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: process.env.NEXT_PUBLIC_API_URL 
-          ? `${process.env.NEXT_PUBLIC_API_URL}/api/:path*`
-          : 'http://localhost:8000/api/:path*',
-      },
-    ];
+    // Only rewrite if NEXT_PUBLIC_API_URL is explicitly set (for external backend)
+    if (process.env.NEXT_PUBLIC_API_URL) {
+      return [
+        {
+          source: '/api/:path*',
+          destination: `${process.env.NEXT_PUBLIC_API_URL}/api/:path*`,
+        },
+      ];
+    }
+    // Otherwise, use local Next.js API routes (default behavior)
+    return [];
   },
 };
 
