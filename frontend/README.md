@@ -116,6 +116,17 @@ The frontend is designed to work seamlessly with Vercel's deployment platform.
 - Run `npm install` again to ensure all dependencies are installed
 - Check Node.js version (should be 18+)
 
+**500 Error on `/api/chat` endpoint:**
+- **Most common cause:** `OPENAI_API_KEY` environment variable is not set in Vercel
+  - Go to Vercel Dashboard → Your Project → Settings → Environment Variables
+  - Add `OPENAI_API_KEY` with your OpenAI API key value
+  - Make sure to select all environments (Production, Preview, Development)
+  - **Important:** After adding the variable, you must redeploy for it to take effect
+  - You can trigger a redeploy by going to Deployments → Click the three dots on latest deployment → Redeploy
+- Check Vercel function logs: Go to your deployment → Functions tab → Click on `/api/chat` → View logs
+- Verify your OpenAI API key is valid and has credits/quota available
+- Check that the `openai` package is installed: `npm install` in the frontend directory
+
 ---
 
 **Enjoy your Matrix-style AI coaching experience! 🟢**
