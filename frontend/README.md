@@ -74,7 +74,7 @@ npm start
    - **You MUST redeploy after changing this setting!**
 4. Vercel will automatically detect Next.js and configure the build
    
-**Note:** The Root Directory MUST be set in the Vercel dashboard. This cannot be configured via `vercel.json` - it must be set in the project settings.
+**Alternative:** If you can't set Root Directory in the dashboard, a `vercel.json` in the root directory is configured to build from the `frontend/` directory. However, **the recommended approach is to set Root Directory in the Vercel dashboard** (Settings → General → Root Directory = `frontend`).
 5. **IMPORTANT:** Add the `OPENAI_API_KEY` environment variable in Vercel:
    - Go to your project settings in Vercel
    - Navigate to **Settings** → **Environment Variables**
