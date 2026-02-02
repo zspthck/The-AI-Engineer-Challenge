@@ -52,8 +52,8 @@ export default function MatrixTerminal() {
     setIsLoading(true);
 
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
-      const response = await fetch(`${apiUrl}/api/chat`, {
+      // Use local Next.js API route
+      const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ export default function MatrixTerminal() {
     } catch (error) {
       const errorMessage: Message = {
         role: 'assistant',
-        content: `Error: ${error instanceof Error ? error.message : 'Failed to connect to the server. Make sure the backend is running on port 8000.'}`,
+        content: `Error: ${error instanceof Error ? error.message : 'Failed to connect to the API. Please check your configuration.'}`,
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, errorMessage]);
