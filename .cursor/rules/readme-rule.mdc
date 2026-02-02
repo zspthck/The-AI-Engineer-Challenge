@@ -1,9 +1,30 @@
 ---
-description: 
+description: Guidelines for writing fun, engaging, and technically accurate README files.
 globs: *.md
 alwaysApply: false
 ---
 ### README.md Rules
 
-- When you create README.md's - they should be dope, and use fun and approachable language.
-- While being fun, they should remain technically accurate.
+1. **Tone and style**
+   - Use fun, approachable language that feels friendly and conversational, not dry or overly formal.
+   - Avoid slang that could be confusing; keep things clear and inclusive for non-native English speakers.
+
+2. **Technical accuracy first**
+   - All instructions, commands, and examples must be correct and up to date.
+   - If there is any trade-off between “sounding cool” and being precise, choose precision and then make it readable.
+
+3. **Clarity and structure**
+   - Organize content with clear headings (e.g. Overview, Setup, Running Locally, Deployment, Troubleshooting).
+   - Use bullet points, numbered lists, and code blocks to make steps easy to follow.
+
+4. **Getting started quickly**
+   - Include a short “Quickstart” section with the minimum steps to run the project locally.
+   - Highlight any required environment variables or external services early so users are not surprised later.
+
+5. **Examples and usage**
+   - Provide at least one concrete example of how to use the project (CLI usage, API calls, UI walkthrough, etc.).
+   - When possible, show expected input and output so users can verify they did things correctly.
+
+6. **Maintenance**
+   - When code or workflows change, update the README in the same PR so it never drifts far from reality.
+   - Remove or clearly mark any deprecated sections instead of leaving outdated or misleading content.

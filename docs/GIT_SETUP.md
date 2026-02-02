@@ -2,6 +2,8 @@
 
 Ready to level up your Git game? This guide is your ticket to becoming a Git ninja! We'll walk you through everything from basic setup to advanced workflows, making sure you're ready to rock your development journey. Just replace the placeholders (like `<YOUR-USERNAME>`) with your actual info, and you're good to go! 🚀
 
+Adding a LocalDev branch.
+
 ## 📋 Prerequisites
 
 Before diving in, you will need these essentials:

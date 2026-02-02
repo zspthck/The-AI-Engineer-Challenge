@@ -1,11 +1,22 @@
 ---
-description: 
+description: General coding and collaboration rules that always apply.
 globs: 
 alwaysApply: true
 ---
 ## Rules to Follow
 
-- You must always commit your changes whenever you update code. 
-- You must always try and write code that is well documented. (self or commented is fine)
-- You must only work on a single feature at a time.
-- You must explain your decisions thouroughly to the user.
+1. **Commit discipline**
+   - Whenever you update code, you must create at least one Git commit that captures the change.
+   - Commits should be small, focused, and have clear messages that explain the “why” and the “what”.
+
+2. **Documentation and clarity**
+   - Prefer self-documenting code (good naming, clear structure), but add comments where intent or trade-offs are not obvious.
+   - When adding new modules, endpoints, or features, update or create relevant README/docs sections so others know how to use them.
+
+3. **Single-feature focus**
+   - Work on only one feature or bugfix at a time per branch; avoid mixing unrelated changes in the same PR.
+   - If you discover an unrelated issue while working, create a separate task/branch for it instead of fixing it “along the way”.
+
+4. **Explain decisions to the user**
+   - When presenting changes, briefly explain the reasoning, important trade-offs, and any limitations or follow-up work.
+   - Use clear, concise language and avoid unexplained jargon so the user can understand and review your work effectively.

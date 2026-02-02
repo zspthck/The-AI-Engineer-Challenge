@@ -5,9 +5,28 @@ alwaysApply: false
 ---
 ### Rules for Frontend
 
-- You must pay attention to visual clarity and contrast. Do not place white text on a white background.
-- You must ensure the UX is pleasant. Boxes should grow to fit their contents, etc. 
-- When asking the user for sensitive information - you must use password style text-entry boxes in the UI.
-- You should use Next.js as it works best with Vercel. 
-- This frontend will ultimately be deployed on Vercel, but it should be possible to test locally. 
-- Always provide users with a way to run the created UI once you have created it.
+1. **Visual clarity and contrast**
+   - Use a clearly readable color palette; avoid low-contrast text/background combinations.
+   - Never place white (or near-white) text on a white (or near-white) background.
+   - Respect accessible contrast ratios (aim for at least WCAG AA for body text whenever practical).
+
+2. **Pleasant, adaptive UX**
+   - Layouts must adapt gracefully to different content lengths; boxes and containers should grow or shrink to fit their contents.
+   - Avoid horizontal scroll on common screen sizes; favor responsive layouts and sensible breakpoints.
+   - Provide clear visual feedback for user actions (hover, active, focus states on buttons/inputs).
+
+3. **Sensitive information handling**
+   - Any field that collects sensitive data (passwords, tokens, API keys, etc.) must use a password-style input (e.g. `type="password"` or equivalent).
+   - Never log or display sensitive values in the UI once entered.
+
+4. **Framework choice**
+   - Prefer building new UI using Next.js as the primary framework, since it integrates best with Vercel.
+   - Use idiomatic Next.js patterns for routing, data fetching, and deployment (e.g. app router where applicable).
+
+5. **Vercel deployment and local development**
+   - Design the frontend so it can be deployed on Vercel without special/manual tweaks (e.g. avoid server features Vercel does not support).
+   - Ensure the same app can be run locally with simple commands (e.g. `npm install` / `npm run dev` or equivalent) and documented env requirements.
+
+6. **Running instructions**
+   - Whenever you create or significantly change a UI, provide clear, up-to-date instructions for how to run it (locally and, if relevant, on Vercel).
+   - Update any existing README or docs section that explains how to start the frontend when you change the required commands or environment.
