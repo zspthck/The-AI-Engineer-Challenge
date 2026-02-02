@@ -1,3 +1,112 @@
-### Front End
+# 🟢 Matrix Terminal Frontend
 
-Please populate this README with instructions on how to run the application!
+A Matrix-style terminal interface for the AI Mental Coach application. This Next.js frontend provides a retro terminal aesthetic with green-on-black styling, perfect for a cyberpunk vibe while maintaining excellent readability and UX.
+
+## 🎨 Features
+
+- **Matrix Terminal Aesthetic**: Green text on black background with monospace font
+- **Real-time Chat**: Connect to the FastAPI backend for AI-powered mental coaching
+- **Responsive Design**: Adapts gracefully to different screen sizes
+- **Smooth Scrolling**: Auto-scrolls to latest messages
+- **Error Handling**: Clear error messages if backend connection fails
+- **Accessible**: High contrast (green on black) for excellent readability
+
+## 📋 Prerequisites
+
+- Node.js 18+ and npm (or yarn/pnpm)
+- Backend server running on `http://localhost:8000` (or configure `NEXT_PUBLIC_API_URL`)
+
+## 🚀 Local Development
+
+### 1. Install Dependencies
+
+```bash
+cd frontend
+npm install
+```
+
+### 2. Configure API URL (Optional)
+
+By default, the frontend connects to `http://localhost:8000`. If your backend runs on a different URL, create a `.env.local` file:
+
+```bash
+NEXT_PUBLIC_API_URL=http://localhost:8000
+```
+
+### 3. Start Development Server
+
+```bash
+npm run dev
+```
+
+The frontend will be available at `http://localhost:3000`.
+
+### 4. Start the Backend
+
+Make sure your FastAPI backend is running (from the project root):
+
+```bash
+# Set your OpenAI API key
+$env:OPENAI_API_KEY = "sk-your-key-here"
+
+# Start the backend
+uv run uvicorn api.index:app --reload
+```
+
+## 🏗️ Build for Production
+
+```bash
+npm run build
+npm start
+```
+
+## 🚢 Deploy to Vercel
+
+1. Push your code to GitHub
+2. Import your repository in Vercel
+3. Vercel will automatically detect Next.js and configure the build
+4. Set environment variable `NEXT_PUBLIC_API_URL` to your backend URL (if different from default)
+5. Deploy!
+
+The frontend is designed to work seamlessly with Vercel's deployment platform.
+
+## 🎮 Usage
+
+1. Open `http://localhost:3000` in your browser
+2. Type your message in the terminal input at the bottom
+3. Press **ENTER** to send
+4. Wait for the AI coach's response (displayed in green)
+5. Continue the conversation!
+
+## 🛠️ Tech Stack
+
+- **Next.js 14**: React framework with App Router
+- **TypeScript**: Type-safe development
+- **Tailwind CSS**: Utility-first styling (via inline styles for Matrix aesthetic)
+- **React Hooks**: Modern React patterns
+
+## 📝 Notes
+
+- The terminal uses a monospace font (`Courier New`) for authentic terminal feel
+- Messages are timestamped for reference
+- The interface auto-focuses the input field for quick typing
+- Error messages appear if the backend is unreachable
+
+## 🐛 Troubleshooting
+
+**Frontend can't connect to backend:**
+- Ensure the backend is running on port 8000
+- Check that CORS is enabled in the backend (it should be with `allow_origins=["*"]`)
+- Verify `NEXT_PUBLIC_API_URL` if you set a custom URL
+
+**Styling looks off:**
+- Clear browser cache and hard refresh (Ctrl+Shift+R)
+- Ensure you're using a modern browser that supports CSS Grid/Flexbox
+
+**Build errors:**
+- Run `npm install` again to ensure all dependencies are installed
+- Check Node.js version (should be 18+)
+
+---
+
+**Enjoy your Matrix-style AI coaching experience! 🟢**
