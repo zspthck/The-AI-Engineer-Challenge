@@ -20,6 +20,10 @@ export default function MatrixTerminal() {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  
+  // Constants to avoid JSX parsing issues with >>
+  const USER_PROMPT = '> ';
+  const ASSISTANT_PROMPT = '>> ';
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -123,7 +127,7 @@ export default function MatrixTerminal() {
           >
             <div className="flex items-start gap-2">
               <span className="text-green-600 shrink-0">
-                {msg.role === 'user' ? '> ' : '>> '}
+                {msg.role === 'user' ? USER_PROMPT : ASSISTANT_PROMPT}
               </span>
               <div className="flex-1">
                 <div className="whitespace-pre-wrap break-words">
@@ -139,7 +143,7 @@ export default function MatrixTerminal() {
 
         {isLoading && (
           <div className="text-green-500 flex items-center gap-2">
-            <span className="text-green-600">>></span>
+            <span className="text-green-600">{'>>'}</span>
             <span className="matrix-cursor">Processing your request...</span>
           </div>
         )}
